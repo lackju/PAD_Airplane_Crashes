@@ -1,6 +1,7 @@
 # Analiza Katastrof Lotniczych
 
-Ten projekt koncentruje się na analizie historycznych katastrof lotniczych przy użyciu technik przetwarzania i wizualizacji danych. Projekt dostarcza informacji na temat przyczyn wypadków lotniczych, trendów w czasie oraz faz lotu, w których dochodziło do katastrof.
+Projekt koncentruje się na analizie historycznych incydentów lotniczych podczas lotów komercyjnych, przy użyciu technik przetwarzania i wizualizacji danych. Projekt dostarcza informacji na temat przyczyn wypadków lotniczych, trendów w czasie oraz faz lotu, w których dochodziło do katastrof.
+Zbiór danych przedstawia dane z lat 1918-2022.
 
 ## Pliki w repozytorium
 
