@@ -6,7 +6,7 @@ Zbiór danych przedstawia dane z lat 1918-2022.
 ## Pliki w repozytorium
 
 ### 1. `plane crashes.csv`
-Oryginalny zbiór danych pobrany z Kaggle. Zawiera dane historyczne dotyczące katastrof lotniczych, w tym datę, czas, operatora, typ samolotu oraz przyczyny katastrof.
+Oryginalny zbiór danych pobrany z Kaggle (https://www.kaggle.com/datasets/abeperez/historical-plane-crash-data). Zawiera dane historyczne dotyczące katastrof lotniczych, w tym datę, czas, operatora, typ samolotu oraz przyczyny katastrof.
 
 ### 2. `Historical Crashes.ipynb`
 Plik Jupyter Notebook zawierający:
