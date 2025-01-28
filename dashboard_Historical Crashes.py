@@ -70,9 +70,48 @@ plt.xlabel("Faza lotu")
 plt.ylabel("Liczba katastrof")
 st.pyplot(plt)
 
+# Najczęstsze modele samolotów, które brały udział w wypadkach w lotach komercyjnych
+st.header('Najczęstsze modele samolotów w wypadkach')
+commercial_flights = dataset[
+    dataset['Flight type'].isin([
+        'Scheduled Revenue Flight',
+        'Charter/Taxi (Non Scheduled Revenue Flight)',
+        'Cargo'
+    ])
+]
+commercial_aircraft_counts = commercial_flights['Aircraft'].value_counts().head(10)
+fig, ax = plt.subplots(figsize=(10, 6))
+commercial_aircraft_counts.plot(kind='bar', ax=ax)
+ax.set_title('Najczęstsze modele samolotów w wypadkach (loty komercyjne)')
+ax.set_xlabel('Model samolotu')
+ax.set_ylabel('Liczba wypadków')
+ax.set_xticklabels(commercial_aircraft_counts.index, rotation=45, ha='right')
+plt.tight_layout()
+st.pyplot(fig)
+
+
+# Liczba incydentów w lotnictwie w Polsce w poszczególnych latach
+st.header('Liczba incydentów lotniczych w Polsce na przestrzeni lat')
+
+poland_data = dataset[dataset['Country'].str.contains('Poland', na=False, case=False)].copy()
+poland_data['Year'] = pd.to_datetime(poland_data['Date'], errors='coerce').dt.year
+poland_yearly_crashes = poland_data['Year'].value_counts().sort_index()
+
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.scatter(poland_yearly_crashes.index, poland_yearly_crashes.values, s=50, alpha=0.7)
+ax.set_title('Liczba incydentów lotniczych w Polsce na przestrzeni lat')
+ax.set_xlabel('Rok')
+ax.set_ylabel('Liczba incydentów')
+ax.grid(True, linestyle='--', alpha=0.6)
+plt.tight_layout()
+st.pyplot(fig)
+
+
 # Filtr - wybór kraju
 st.header("Filtruj dane dla danego kraju")
 country = st.selectbox("Wybierz kraj:", options=sorted(dataset['Country'].dropna().unique()))
 filtered_data = dataset[dataset['Country'] == country]
 st.write(f"Katastrofy w kraju: {country}")
 st.dataframe(filtered_data)
+
+
