@@ -25,5 +25,5 @@ Plik zawierający kod dashboardu stworzonego w Streamlit. Dashboard umożliwia:
 
 Aby uruchomić dashboard, należy wykonać w terminalu następujące polecenie:
 ```bash
-streamlit run dashboard_Historical_Crashes.py
+streamlit run 'dashboard_Historical Crashes.py'
 ```
